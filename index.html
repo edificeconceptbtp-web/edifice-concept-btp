@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Édifice Concept BTP — Espace Immobilier</title>
+<style>
+:root{--navy:#06366b;--blue:#0b4c91;--gold:#c99324;--ink:#10233e;--muted:#667085;--bg:#f5f7fa;--white:#fff;--line:#e4e8ef;--green:#16804a}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+button,input,select,textarea{font:inherit} button{cursor:pointer}
+.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:24px;padding:10px 18px}
+.logo{height:58px;width:auto;object-fit:contain}.links{display:flex;gap:22px;margin-left:auto;align-items:center}.links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14px}.links a:hover{color:var(--blue)}
+.wa{background:var(--green);color:white;border:0;border-radius:9px;padding:12px 15px;font-weight:700}
+.hero{max-width:1180px;margin:0 auto;background:linear-gradient(100deg,#062f5d 0%,#0b477e 52%,#173d5d 100%);color:white;min-height:360px;padding:55px 42px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-80px;top:-100px;width:470px;height:470px;border-radius:50%;background:rgba(255,255,255,.06)}
+.eyebrow{color:#e0aa36;font-weight:800;letter-spacing:1.5px}.hero h1{font-size:44px;line-height:1.08;max-width:650px;margin:12px 0}.hero p{max-width:650px;font-size:18px;line-height:1.55;color:#e8eef6}
+.services{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap}.service{display:flex;gap:10px;align-items:center}.service .ico{width:45px;height:45px;border:2px solid #e0aa36;border-radius:50%;display:grid;place-items:center;font-size:21px}.service b{display:block}.service small{color:#dce6f2}
+.wrap{max-width:1180px;margin:auto;padding:0 18px}.immo{margin-top:-35px;position:relative;z-index:2;background:white;border-radius:20px;box-shadow:0 10px 30px rgba(15,35,60,.12);padding:26px}.immo h2{margin:0;color:var(--blue);font-size:36px}.immo h2 span{color:var(--gold)}.immo p{color:var(--muted);margin-top:7px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}.card{border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff}.card .big{font-size:43px}.card h3{margin:8px 0 6px;font-size:21px}.card p{font-size:14px;line-height:1.45}.btn{width:100%;border:0;border-radius:9px;padding:13px 16px;background:var(--blue);color:white;font-weight:800}.btn.gold{background:var(--gold)}
+.section{padding:34px 0}.section h2{margin:0 0 8px}.projects{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.project{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}.project img{width:100%;height:145px;object-fit:cover}.project div{padding:12px;font-weight:700}
+.modal{position:fixed;inset:0;background:rgba(5,19,36,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:30}.modal.show{display:flex}.dialog{background:#fff;width:min(650px,100%);max-height:92vh;overflow:auto;border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.2)}.dialog-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.dialog-logo{height:52px}.close{border:0;background:#eef2f7;width:40px;height:40px;border-radius:50%;font-size:22px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:18px 0}.step{padding:9px;text-align:center;background:#edf1f6;border-radius:9px;font-size:12px;font-weight:700}.step.active{background:#e9f0f8;color:var(--blue);border:1px solid #b9cde3}.group{margin-top:14px}.group label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}.field{width:100%;padding:12px;border:1px solid #d7dde6;border-radius:9px;background:#fff}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notice{margin-top:14px;padding:12px;border-radius:9px;background:#f5f7fa;color:var(--muted);font-size:12px}.success{display:none;text-align:center;padding:30px 8px}.success.show{display:block}.success .check{font-size:48px}.admin{margin-top:25px}.admin-head{display:flex;justify-content:space-between;gap:10px;align-items:center}.badge{background:#e9f0f8;color:var(--blue);border-radius:99px;padding:6px 10px;font-size:12px;font-weight:800}.lead{padding:14px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:10px}.lead small{color:var(--muted)}footer{margin-top:45px;background:#062f5d;color:white;padding:28px 18px;text-align:center;font-size:13px}
+@media(max-width:850px){.links{display:none}.hero h1{font-size:35px}.cards{grid-template-columns:1fr}.projects{grid-template-columns:1fr 1fr}.nav{justify-content:center}.logo{height:52px}}
+@media(max-width:520px){.hero{padding:40px 22px}.hero h1{font-size:31px}.services{gap:16px}.immo{padding:18px}.immo h2{font-size:30px}.projects{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.wa{display:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <nav class="nav">
+    <img class="logo" src="logo-edifice.png" alt="Édifice Concept BTP">
+    <div class="links">
+      <a href="#accueil">Accueil</a><a href="#services">Nos services</a><a href="#approche">Notre approche</a><a href="#contact">Contact</a>
+      <button class="wa" type="button" onclick="openModal('cherche')">WhatsApp / Demande</button>
+    </div>
+  </nav>
+</header>
+
+<main id="accueil">
+<section class="hero">
+  <div class="eyebrow">ÉDIFICE CONCEPT BTP</div>
+  <h1>Construire aujourd'hui,<br>demain ensemble.</h1>
+  <p><b>Construction • Architecture • Immobilier</b><br>Nous vous accompagnons dans la conception, la construction, la rénovation et la mise en relation immobilière.</p>
+  <div class="services" id="services">
+    <div class="service"><span class="ico">▦</span><div><b>Conception de plans</b><small>Architecture & études</small></div></div>
+    <div class="service"><span class="ico">⌂</span><div><b>Construction</b><small>Réalisation & rénovation</small></div></div>
+    <div class="service"><span class="ico">⌂</span><div><b>Service immobilier</b><small>Recherche & mise en relation</small></div></div>
+    <div class="service"><span class="ico">✓</span><div><b>Suivi & conseil</b><small>Accompagnement du projet</small></div></div>
+  </div>
+</section>
+
+<div class="wrap">
+<section class="immo">
+  <h2>Espace <span>Immobilier</span></h2>
+  <p>Déposez votre demande ou proposez votre bien. Nous vous accompagnons.</p>
+  <div class="cards">
+    <article class="card"><div class="big">🏠</div><h3>Je cherche un logement</h3><p>Maison, appartement, terrain, local commercial…</p><button class="btn" onclick="openModal('cherche')">Exprimer mon besoin →</button></article>
+    <article class="card"><div class="big">🏡</div><h3>J'ai un bien à vendre ou à louer</h3><p>Faites connaître votre bien à notre réseau de clients.</p><button class="btn gold" onclick="openModal('bien')">Proposer mon bien →</button></article>
+    <article class="card"><div class="big">🏗️</div><h3>Je veux construire</h3><p>Décrivez votre projet et échangez avec notre équipe.</p><button class="btn" onclick="openModal('construire')">Décrire mon projet →</button></article>
+  </div>
+</section>
+
+<section class="section" id="approche">
+  <h2>Nos réalisations</h2>
+  <p style="color:var(--muted)">Une présentation pourra être alimentée progressivement avec vos véritables projets et réalisations.</p>
+  <div class="projects">
+    <div class="project"><img src="logo-edifice.png" alt=""><div>Villa & projets résidentiels</div></div>
+    <div class="project"><img src="logo-edifice.png" alt=""><div>Conception architecturale</div></div>
+    <div class="project"><img src="logo-edifice.png" alt=""><div>Construction & rénovation</div></div>
+    <div class="project"><img src="logo-edifice.png" alt=""><div>Projets immobiliers</div></div>
+  </div>
+</section>
+
+<section class="card admin" id="contact">
+  <div class="admin-head"><div><h2>Demandes reçues</h2><p style="color:var(--muted);margin:5px 0">Espace de suivi du prototype.</p></div><span id="count" class="badge">0 demande</span></div>
+  <div id="leads"><p style="color:var(--muted)">Aucune demande enregistrée pour le moment.</p></div>
+</section>
+</div>
+</main>
+
+<footer>ÉDIFICE CONCEPT BTP — Construction • Architecture • Immobilier</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="dialog">
+    <div class="dialog-head"><img class="dialog-logo" src="logo-edifice.png" alt="Édifice Concept BTP"><button class="close" onclick="closeModal()" aria-label="Fermer">×</button></div>
+    <div id="formView">
+      <div class="steps"><div class="step active">1. Vos informations</div><div class="step">2. Votre besoin</div><div class="step">3. Validation</div></div>
+      <h2 id="modalTitle">Je cherche un logement</h2><p id="modalDesc" style="color:var(--muted)">Remplissez le formulaire.</p>
+      <form id="leadForm">
+        <div class="grid2">
+          <div class="group"><label>Nom et prénom *</label><input class="field" id="name" required></div>
+          <div class="group"><label>Téléphone / WhatsApp *</label><input class="field" id="phone" required></div>
+        </div>
+        <div class="group"><label>Zone / localisation *</label><input class="field" id="zone" placeholder="Ex. Cimenterie, Lambanyi..." required></div>
+        <div id="dynamic"></div>
+        <div class="group"><label>Précisions</label><textarea class="field" id="message" rows="4" placeholder="Décrivez votre besoin..."></textarea></div>
+        <button class="btn" style="margin-top:16px" type="submit">Envoyer ma demande</button>
+        <div class="notice">Vos informations sont destinées au traitement de votre demande par Édifice Concept BTP.</div>
+      </form>
+    </div>
+    <div class="success" id="success"><div class="check">✓</div><h2>Demande enregistrée</h2><p style="color:var(--muted)">Merci. Votre demande apparaît maintenant dans l'espace de suivi du prototype.</p><button class="btn" onclick="closeModal()">Fermer</button></div>
+  </div>
+</div>
+
+<script>
+const configs={
+ cherche:{title:"Je cherche un logement",desc:"Décrivez le logement recherché. Aucun bien n'est présenté comme disponible sans avoir été réellement enregistré.",html:`<div class="grid2"><div class="group"><label>Type de bien *</label><select class="field" id="type" required><option value="">Sélectionner</option><option>Maison</option><option>Appartement</option><option>Terrain</option><option>Local commercial</option></select></div><div class="group"><label>Achat ou location *</label><select class="field" id="operation" required><option value="">Sélectionner</option><option>Achat</option><option>Location</option></select></div></div><div class="grid2"><div class="group"><label>Budget *</label><input class="field" id="budget" placeholder="Ex. 5000000 GNF" required></div><div class="group"><label>Nombre de chambres</label><input class="field" id="rooms" type="number" min="0" max="30"></div></div>`},
+ bien:{title:"J'ai un bien à vendre ou à louer",desc:"Présentez votre bien. Les informations pourront être vérifiées avant toute publication.",html:`<div class="grid2"><div class="group"><label>Type de bien *</label><select class="field" id="type" required><option value="">Sélectionner</option><option>Maison</option><option>Villa</option><option>Appartement</option><option>Terrain</option><option>Local commercial</option><option>Immeuble</option></select></div><div class="group"><label>Opération *</label><select class="field" id="operation" required><option value="">Sélectionner</option><option>Vente</option><option>Location</option></select></div></div><div class="group"><label>Prix / loyer souhaité *</label><input class="field" id="budget" placeholder="Montant en GNF" required></div>`},
+ construire:{title:"Je veux construire",desc:"Décrivez votre projet de construction ou de rénovation.",html:`<div class="grid2"><div class="group"><label>Type de projet *</label><select class="field" id="type" required><option value="">Sélectionner</option><option>Villa</option><option>Maison R+1</option><option>Maison R+2</option><option>Immeuble</option><option>Rénovation</option><option>Autre</option></select></div><div class="group"><label>Budget estimatif</label><input class="field" id="budget" placeholder="Facultatif"></div></div>`}
+};
+let current="cherche";
+let leads=JSON.parse(localStorage.getItem("edificeLeads")||"[]");
+
+function openModal(mode){current=mode;const c=configs[mode];document.getElementById("modalTitle").textContent=c.title;document.getElementById("modalDesc").textContent=c.desc;document.getElementById("dynamic").innerHTML=c.html;document.getElementById("leadForm").reset();document.getElementById("success").classList.remove("show");document.getElementById("formView").style.display="block";document.getElementById("modal").classList.add("show");}
+function closeModal(){document.getElementById("modal").classList.remove("show");}
+document.getElementById("leadForm").addEventListener("submit",e=>{e.preventDefault();const lead={mode:current,name:name.value,phone:phone.value,zone:zone.value,type:document.getElementById("type")?.value||"",operation:document.getElementById("operation")?.value||"",budget:document.getElementById("budget")?.value||"",rooms:document.getElementById("rooms")?.value||"",message:message.value,date:new Date().toLocaleString("fr-FR")};leads.unshift(lead);localStorage.setItem("edificeLeads",JSON.stringify(leads));renderLeads();document.getElementById("formView").style.display="none";document.getElementById("success").classList.add("show");});
+function renderLeads(){document.getElementById("count").textContent=leads.length+" demande"+(leads.length>1?"s":"");const box=document.getElementById("leads");if(!leads.length){box.innerHTML='<p style="color:var(--muted)">Aucune demande enregistrée pour le moment.</p>';return}box.innerHTML=leads.map((x,i)=>`<div class="lead"><div><b>${esc(x.name)}</b><br><small>${label(x.mode)} · ${esc(x.zone)}</small><br><small>📞 ${esc(x.phone)} ${x.type?"· "+esc(x.type):""} ${x.operation?"· "+esc(x.operation):""} ${x.budget?"· "+esc(x.budget):""}</small></div><small>${esc(x.date)}</small></div>`).join("")}
+function label(m){return m==="cherche"?"Recherche logement":m==="bien"?"Proposition de bien":"Projet construction"}
+function esc(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+renderLeads();
+</script>
+</body>
+</html>
