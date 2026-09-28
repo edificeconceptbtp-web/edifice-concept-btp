@@ -24,7 +24,7 @@ input{width:100%;padding:13px;border:1px solid #ccd4df;border-radius:8px;margin:
 <section id="loginView" class="card login"><h1>Administration</h1><p class="muted">Accès réservé à Édifice Concept BTP.</p><form id="loginForm"><label>Adresse e-mail</label><input id="email" type="email" autocomplete="username" required><label>Mot de passe</label><input id="password" type="password" autocomplete="current-password" required><div id="loginError" class="error"></div><button class="primary" type="submit">Se connecter</button></form></section>
 <section id="adminView" class="hidden"><div class="card"><h1>Tableau de bord</h1><p class="muted">Demandes reçues via le site Édifice Concept BTP.</p></div><div class="stats"><div class="stat"><span class="muted">Total</span><strong id="total">0</strong></div><div class="stat"><span class="muted">Recherche logement</span><strong id="cherche">0</strong></div><div class="stat"><span class="muted">Construction / autres</span><strong id="autres">0</strong></div></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Type</th><th>Nom</th><th>Téléphone</th><th>Zone</th><th>Bien</th><th>Opération</th><th>Budget</th><th>Détails</th></tr></thead><tbody id="rows"><tr><td colspan="9">Chargement...</td></tr></tbody></table></div></section>
 
-<div class="real-tabs">
+<div id="realTabs" class="real-tabs hidden">
 <button id="tabDemandes" class="real-tab active" type="button">Demandes clients</button>
 <button id="tabRealisations" class="real-tab" type="button">Réalisations</button>
 </div>
