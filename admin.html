@@ -134,12 +134,16 @@ async function refreshAuth(){
   adminView.classList.remove("hidden");
   logoutBtn.classList.remove("hidden");
   loadDashboard();
- }else{
-  loginView.classList.add("hidden");
-  adminView.classList.add("hidden");
-  logoutBtn.classList.add("hidden");
-  realPanel.classList.remove("hidden");
-  loadRealisations();}
+}else{
+ loginView.classList.add("hidden");
+ adminView.classList.remove("hidden");
+ logoutBtn.classList.add("hidden");
+ dashboardTable.classList.add("hidden");
+ stats.classList.add("hidden");
+ realPanel.classList.remove("hidden");
+ loadRealisations();
+}
+}
  document.getElementById("loginForm").addEventListener("submit",async e=>{e.preventDefault();document.getElementById("loginError").textContent="";const {error}=await supabaseClient.auth.signInWithPassword({email:document.getElementById("email").value,password:document.getElementById("password").value});if(error){document.getElementById("loginError").textContent="Connexion impossible : "+error.message;return}refreshAuth()});
 logoutBtn.addEventListener("click",async()=>{await supabaseClient.auth.signOut();refreshAuth()});refreshAuth();
 </script>
