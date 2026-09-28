@@ -116,7 +116,11 @@ statut:"nouvelle",
 notes:""
 };
 const {error}=await supabaseClient.from("demandes").insert([payload]);
-if(error){alert("La demande n’a pas pu être enregistrée. Vérifiez votre connexion.");console.error(error);return}
+if(error){
+  alert("Erreur Supabase : " + error.message + (error.details ? "\n" + error.details : ""));
+  console.error(error);
+  return;
+}
 document.getElementById("formView").style.display="none";document.getElementById("success").classList.add("show");loadLeads();
 });
 
