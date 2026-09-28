@@ -101,15 +101,19 @@ function closeModal(){document.getElementById("modal").classList.remove("show")}
 document.getElementById("leadForm").addEventListener("submit",async e=>{
 e.preventDefault();
 const payload={
-type_demande:current,
+demande_type:current,
 nom:document.getElementById("name").value,
-téléphone:document.getElementById("phone").value,
+telephone:document.getElementById("phone").value,
+email:"",
 zone:document.getElementById("zone").value,
 bien_type:document.getElementById("type")?.value||"",
-opération:document.getElementById("operation")?.value||"",
+operation:document.getElementById("operation")?.value||"",
 budget:document.getElementById("budget")?.value||"",
 chambre:document.getElementById("rooms")?.value?Number(document.getElementById("rooms").value):null,
-"projet delai":""
+delai_projet:"",
+details:document.getElementById("message").value,
+statut:"nouvelle",
+notes:""
 };
 const {error}=await supabaseClient.from("demandes").insert([payload]);
 if(error){alert("La demande n’a pas pu être enregistrée. Vérifiez votre connexion.");console.error(error);return}
